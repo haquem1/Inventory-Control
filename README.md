@@ -1,2 +1,2 @@
 # Inventory-Control
-Logs multimd
+Logs multimedia department equipment use. 
