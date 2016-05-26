@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Equipment Checkout </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../sass/default.css" />
+	<link rel="stylesheet" type="text/css" href="../sass/component.css" />
+	<script src="../scripts/modernizr.custom.js"></script>
+  </head>
+  <body style="background-color: #ced4c9; text-align: center;">
+  	<div class="container-fluid">
+  		<div class="row">
+  			<div class="main-title text-center col-sm-12">
+    			<h1>What kind of equipment do you need today?</h1>
+    		</div>
+    	</div>
+    	<div class="row"></div>
+    	   	<label class="filter-labels audio-btn">Audio</label> <button class="btn btn-2 btn-2i" name="audio-btn">+</button>
+    		<label class="filter-labels cameras-btn">Cameras</label> <button class="btn btn-2 btn-2i" name="cameras-btn">+</button>
+    		<label class="filter-labels lenses-btn">Lenses</label> <button class="btn btn-2 btn-2i" name="lenses-btn">+</button>
+    	<div class="row"></div>
+    	   	<label class="filter-labels gear-btn">Gear</label> <button class="btn btn-2 btn-2i" name="gear-btn">+</button>
+    		<label class="filter-labels lighting-btn">Lighting</label> <button class="btn btn-2 btn-2i" name="lighting-btn">+</button>
+    		<label class="filter-labels cables-btn">Cables</label> <button class="btn btn-2 btn-2i" name="cables-btn">+</button>
+    	<div class="row"></div>
+    	    <label class="filter-labels card_charge-btn">Card Readers<br>&Chargers</label> <button class="btn btn-2 btn-2i" name="card_charge-btn">+</button>
+    	   	<label class="filter-labels batteries-btn">Batteries</label> <button class="btn btn-2 btn-2i" name="batteries-btn">+</button>
+    		<label class="filter-labels software-btn">Software</label> <button class="btn btn-2 btn-2i" name="software-btn">+</button>
+		<div class="row"></div>
+    		<button class="btn btn-4 btn-4c icon-arrow-right">Continue</button>
+
+    	<div class="row"></div>
+    		<div class="cart col-sm-offset-4" style="text-align: left;">
+    		<div class="row"></div>
+	    	   	<button class="btn btn-2 btn-2i" name="audio-btn">-</button><label class="filter-labels audio-btn">Audio</label> <br>
+	    		<button class="btn btn-2 btn-2i" name="cameras-btn">-</button><label class="filter-labels cameras-btn">Cameras</label><br>
+	    		<button class="btn btn-2 btn-2i" name="lenses-btn">-</button><label class="filter-labels lenses-btn">Lenses</label><br>
+	    	   	<button class="btn btn-2 btn-2i" name="gear-btn">-</button><label class="filter-labels gear-btn">Gear</label><br>
+	    		<button class="btn btn-2 btn-2i" name="lighting-btn">-</button><label class="filter-labels lighting-btn">Lighting</label><br>
+	    		<button class="btn btn-2 btn-2i" name="cables-btn">-</button><label class="filter-labels cables-btn">Cables</label><br>
+	    	    <button class="btn btn-2 btn-2i" name="card_charge-btn">-</button><label class="filter-labels card_charge-btn">Card Readers<br>&Chargers</label><br>
+	    	   	<button class="btn btn-2 btn-2i" name="batteries-btn">-</button><label class="filter-labels batteries-btn">Batteries</label><br>
+	    		<button class="btn btn-2 btn-2i" name="software-btn">-</button><label class="filter-labels software-btn">Software</label>
+	    	</div>
+
+    	<!--hidden form to send data to PHP-->
+    	<form class="form-inline" name="userFilter" action="../scripts/filter.php" method="POST">
+		 	<div class="form-group">
+		    	<input type="hidden" name="audio" value="NO">
+		    	<input type="hidden" name="cameras" value="NO">
+		    	<input type="hidden" name="lenses" value="NO">
+		    	<input type="hidden" name="gear" value="NO">
+		    	<input type="hidden" name="lighting" value="NO">
+		    	<input type="hidden" name="cables" value="NO">
+		    	<input type="hidden" name="card_charge" value="NO">
+		    	<input type="hidden" name="batteries" value="NO">
+		    	<input type="hidden" name="software" value="NO">
+		  	</div>
+		</form>
+    </div>
+
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="../scripts/classie.js"></script>
+  </body>
+</html>
