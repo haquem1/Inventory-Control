@@ -1,76 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title> Equipment Checkout </title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../sass/default.css" />
-	<link rel="stylesheet" type="text/css" href="../sass/component.css" />
-	<script src="../scripts/modernizr.custom.js"></script>
-  </head>
-  <body style="background-color: #ced4c9; text-align: center;">
-  	<div class="container-fluid">
-  		<div class="row">
-  			<div class="main-title text-center col-sm-12">
-            <div class="row"></div>
-    			<h1>What kind of equipment do you need today?</h1>
-    		</div>
-    	</div>
-    	<div class="row"></div>
-    	   	<label class="filter-labels audio-btn add-button">Audio</label> <button class="btn btn-2 btn-2i audio-btn add-button" name="audio-btn">+</button>
-    		<label class="filter-labels cameras-btn add-button">Cameras</label> <button class="btn btn-2 btn-2i cameras-btn add-button" name="cameras-btn">+</button>
-    		<label class="filter-labels lenses-btn add-button">Lenses</label> <button class="btn btn-2 btn-2i lenses-btn add-button" name="lenses-btn">+</button>
-    	<div class="row"></div>
-    	   	<label class="filter-labels gear-btn add-button">Gear</label> <button class="btn btn-2 btn-2i gear-btn add-button" name="gear-btn">+</button>
-    		<label class="filter-labels lighting-btn add-button">Lighting</label> <button class="btn btn-2 btn-2i lighting-btn add-button" name="lighting-btn">+</button>
-    		<label class="filter-labels cables-btn add-button">Cables</label> <button class="btn btn-2 btn-2i cables-btn add-button" name="cables-btn">+</button>
-    	<div class="row"></div>
-    	    <label class="filter-labels card_charge-btn add-button">Card Readers<br>&Chargers</label> <button class="btn btn-2 btn-2i card_charge-btn add-button" name="card_charge-btn">+</button>
-    	   	<label class="filter-labels batteries-btn add-button">Batteries</label> <button class="btn btn-2 btn-2i batteries-btn add-button" name="batteries-btn">+</button>
-    		<label class="filter-labels software-btn add-button">Software</label> <button class="btn btn-2 btn-2i software-btn add-button" name="software-btn">+</button>
-		<div class="row"></div>
-    		<button class="btn btn-4 btn-4c icon-arrow-right">Continue</button>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="../sass/default.css">
+</head>
 
-    	<div class="row"></div>
-    		<ul class="list-group col-sm-offset-4" style="text-align: left;">
-    		<div class="row"></div>
-	    	   	<button class="btn btn-2 btn-2i cart audio-btn2" name="audio-btn2">-</button><label class="filter-labels audio-btn cart">Audio</label> <br>
-	    		<button class="btn btn-2 btn-2i cart cameras-btn2" name="cameras-btn2">-</button><label class="filter-labels cameras-btn cart cameras-btn2">Cameras</label><br>
-	    		<button class="btn btn-2 btn-2i cart lenses-btn2" name="lenses-btn2">-</button><label class="filter-labels lenses-btn cart lenses-btn2">Lenses</label><br>
-	    	   	<button class="btn btn-2 btn-2i cart gear-btn2" name="gear-btn2">-</button><label class="filter-labels cart gear-btn2">Gear</label><br>
-	    		<button class="btn btn-2 btn-2i cart lighting-btn2" name="lighting-btn2">-</button><label class="filter-labels lighting-btn cart">Lighting</label><br>
-	    		<button class="btn btn-2 btn-2i cart cables-btn2" name="cables-btn2">-</button><label class="filter-labels cables-btn cart">Cables</label><br>
-	    	    <button class="btn btn-2 btn-2i cart card_charge-btn2" name="card_charge-btn2">-</button><label class="filter-labels card_charge-btn cart">Card Readers<br>&Chargers</label><br>
-	    	   	<button class="btn btn-2 btn-2i cart batteries-btn2" name="batteries-btn2">-</button><label class="filter-labels batteries-btn cart">Batteries</label><br>
-	    		<button class="btn btn-2 btn-2i cart software-btn2" name="software-btn2">-</button><label class="filter-labels software-btn cart">Software</label>
-	    	</ul>
+<body>
+    <div class="container-fluid">
+        <div class="application-wrapper">
+            <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+            <!--CATEGORY SELECTION AREA        -->
+            <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+            <div id="category_area" class="phase">
+                <div class="row">
+                    <div class="col s12">
+                        <h1>What kind of equipment do you need today?</h1>
+                    </div>
+                </div>
 
-    	<!--hidden form to send data to PHP-->
-    	<form class="form-inline" name="userFilter" action="../scripts/filter.php" method="POST">
-		 	<div class="form-group">
-		    	<input type="hidden" id="audio" value="NO">
-		    	<input type="hidden" id="cameras" value="NO">
-		    	<input type="hidden" id="lenses" value="NO">
-		    	<input type="hidden" id="gear" value="NO">
-		    	<input type="hidden" id="lighting" value="NO">
-		    	<input type="hidden" id="cables" value="NO">
-		    	<input type="hidden" id="card_charge" value="NO">
-		    	<input type="hidden" id="batteries" value="NO">
-		    	<input type="hidden" id="software" value="NO">
-		  	</div>
-		</form>
+                <div class="row">
+                    <div class="col s4">
+                        <div class="right">
+                            <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="audio" src="../images/audio.svg" alt="audio"></a>
+                            <br>
+                            <label class="item-label">audio</label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="camera" src="../images/camera.svg" alt="cameras"></a>
+                        <br>
+                        <label class="item-label">cameras</label>
+                    </div>
+                    <div class="col s4">
+                        <div class="left">
+                            <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="lense" src="../images/lense.svg" alt="lenses"></a>
+                            <br>
+                            <label class="item-label">lenses</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+                        <div class="right">
+                            <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="gear" src="../images/audio.svg" alt="gear"></a>
+                            <br>
+                            <label class="item-label">gear</label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="lighting" src="../images/audio.svg" alt="lighting"></a>
+                        <br>
+                        <label class="item-label">lighting</label>
+                    </div>
+                    <div class="col s4">
+                        <div class="left">
+                            <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="cable" src="../images/audio.svg" alt="cables"></a>
+                            <br>
+                            <label class="item-label">cables</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+                        <div class="right">
+                            <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="card_reader" src="../images/audio.svg" alt="card_reader"></a>
+                            <br>
+                            <label class="item-label">card readers
+                                <br>&amp; cables</label>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="battery" src="../images/audio.svg" alt="batteries"></a>
+                        <br>
+                        <label class="item-label">batteries</label>
+                    </div>
+                    <div class="col s4">
+                        <div class="left">
+                            <a class="btn-custom btn-floating waves-effect waves-light turquoise darken-2"><img class="category-img" id="software" src="../images/audio.svg" alt="software"></a>
+                            <br>
+                            <label class="item-label">software</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <button class="next-custom waves-effect waves-light btn-large turquoise darken-2">Continue</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+            <!--ITEM SELECTION AREA        -->
+            <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+            <div id="item_area" class="phase">
+                <h1>testing</h1>
+                <h1>testing</h1>
+                <h1>testing</h1>
+                <h1>testing</h1>
+            </div>
+        </div>
     </div>
-
 
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-    <script src="../scripts/classie.js"></script>
-    <script src="../scripts/filterUI.js"></script>
-  </body>
+    <!-- Compiled and minified JavaScript -->
+    <script src="../resources/materialize.js"></script>
+    <script src="../scripts/index_motion.js"></script>
+</body>
+
 </html>
