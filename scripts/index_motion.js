@@ -48,3 +48,7 @@ function create_item_list(selected) {
     var item = $(selected).children().first().attr("id");
     //alert("the selected item was a " + item);
 }
+
+function destroy_item_list(selected) {
+    var item = $(selected).children().first().attr("id");
+}
