@@ -1,77 +1,102 @@
-
 .btn-custom {
-    height:120px !important;
-    width:120px !important;
-    margin-top:10px;
+	height: 120px !important;
+	width: 120px !important;
+	margin-top: 10px;
+	background-color: rgba(255,255,255,.4) !important;
+	border:5px outset white;
+}
+
+.btn-custom:hover{
+	background-color: rgba(105,233,255,.5) !important;
+	transform: scale(1.1);
 }
 
 .application-wrapper {
-    text-align:center;
-    margin-top:3% !important;
-    position:relative;
+	text-align: center;
+	position: relative;
 }
 
 .item-label {
-    font-size:1.5em !important;
-    color:rgba(255,255,255,1);
-    text-shadow: 2px 2px 2px rgba(0,0,0,.25);
-    text-transform:capitalize;
+	font-family: lato;
+	font-size: 1.5em !important;
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+	text-transform: capitalize;
 }
 
 .category-img {
+	margin-top: 20px;
+	height: 80px;
 }
 
 .next-custom {
-    margin-top:50px !important;
-    margin-left:50%;
+	margin-top: 20px !important;
+	margin-left: 50%;
 }
 
 #category_selection_area {
-    height:100vh;
-    width:100%;
-    float:left;
+	height: 100vh;
+	width: 100%;
+	float: left;
 }
 
 #item_selection_area {
-    height:100vh;
+	height: 100vh;
 }
 
 body {
-    background-color: #ced4c9; 
-    overflow-y:hidden;
-    overflow-x:show;
+/*	background-color: #ced4c9;*/
+	background-image:url('../images/backgrounds/nature1.jpg');
+	background-size:cover;
+	background-position: center;
+	height:100vh;
+	overflow-y: hidden;
+	overflow-x: show;
 }
 
 #phase {
-    border:2px solid black;
-    width:100% !important;
-    position:absolute;
-    top:0px;
+	border: 2px solid black;
+	width: 100% !important;
+	position: absolute;
+	top: 0px;
 }
 
-#phase{
-}
+#phase {}
 
 #phase item_area {
-        left:100%;
+	left: 100%;
 }
 
 .phase {
-    border:2px solid black;
-    
-    position:absolute;
-    top:0px;
-    height:100vh !important;
-    width:100%;
-    clear:both;
-    margin-right:auto;
-    margin-left:auto;
+	position: absolute;
+	top: 0px;
+	height: 100vh !important;
+	width: 100%;
+	padding-top: 3% !important;
+	background-color: rgba(0, 0, 0, .25) !important;
 }
 
 #category_area {
-    left:0px;
+	left: 0px;
 }
 
 #item_area {
-    left:100%;
+	left: 100%;
+}
+
+.sunny {
+	height: 300px;
+	animation-duration: 3s;
+}
+
+.main-heading {
+	font-family: lato;
+	color: white;
+	font-size:3.5em;
+	text-transform:capitalize;
+}
+.sub-heading {
+	font-family: lato;
+	color: rgba(255,255,255,1);
+	font-size:1.5em;
 }

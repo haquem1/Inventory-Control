@@ -1,0 +1,49 @@
+.brand {
+	font-family: lato;
+	font-size: .9em;
+	text-transform: capitalize;
+	margin-left: 10px !important;
+}
+
+.menu-item {
+	font-family: lato;
+	text-transform: capitalize;
+}
+
+.admin-greeting {
+	font-family: lato;
+	font-size: 2em;
+	text-transform: capitalize;
+}
+
+.card-images {
+	height: 200px;
+	margin-top: 20px;
+}
+
+.description {
+	font-family: lato;
+	font-size: 1.2em;
+	width: 80%;
+	margin-left: 10% !important;
+}
+
+.card-title {
+	border-bottom: 1px solid black;
+}
+
+.credits {
+	font-family: lato;
+	font-size: 1em;
+	text-transform: capitalize;
+	color: white;
+	margin: 0px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 25%;
+	height: 25px;
+}

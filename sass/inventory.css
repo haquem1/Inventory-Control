@@ -1,0 +1,25 @@
+
+.item_addition {
+	margin-top: 10px;
+	height: 50px;
+	border-radius:50%;
+}
+.item-image {
+	height:150px;
+	margin:10px 0px 10px 0px;
+}
+
+.modal {
+	width:25%;
+}
+
+.modal-header {
+	font-family:lato;
+	text-transform:capitalize;
+	font-size:1.5em;
+	margin:0px !important;
+}
+
+.addition-label {
+	text-transform:capitalize !important;
+}
