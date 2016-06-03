@@ -77,6 +77,24 @@
 	overflow: hidden !important;
 }
 
+.card-action-item {
+	height: 35px !important;
+}
+
+.btn-holder {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	float: right;
+	margin: 10px 10px 0px 0px;
+	opacity: 0;
+}
+
+#delete-btn,
+#update-btn {
+	border: 2px solid black;
+}
+
 
 /*Styles for small screens*/
 

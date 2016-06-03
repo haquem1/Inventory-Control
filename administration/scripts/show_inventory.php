@@ -51,8 +51,16 @@
     function create_item_card($id, $image, $date_added, $name, $category, $description, $quantity, $available, $lost, $broken){
         echo '
             <div class="col s12 m6 l3">
-                <div class="card item_card hoverable">
+                <div id="'.$id.'-card" class="card item_card hoverable">
                     <div class="card-image">
+						<div class="row">
+							<div class="btn-holder">
+								<img id="'.$id.'-delete" class="card-action-item delete-btn" src="../images/delete.svg">
+							</div> 
+							<div class="btn-holder">
+								<img id="'.$id.'-update" class="card-action-item update-btn" src="../images/update.svg">
+							</div> 
+						</div>
                         <img id="'.$id.'-image_name" class="item-image" src="../images/inventory/'.$image.'">
                     </div>
                     <div class="card-content">
