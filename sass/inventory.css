@@ -1,25 +1,71 @@
-
 .item_addition {
-	margin-top: 10px;
-	height: 50px;
-	border-radius:50%;
-}
-.item-image {
-	height:150px;
-	margin:10px 0px 10px 0px;
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 50%;
 }
 
-.modal {
-	width:25%;
+.item-image {
+    height: 150px;
+    margin: 10px 0px 10px 0px;
 }
 
 .modal-header {
-	font-family:lato;
-	text-transform:capitalize;
-	font-size:1.5em;
-	margin:0px !important;
+    font-family: lato;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    margin: 0px !important;
 }
 
 .addition-label {
-	text-transform:capitalize !important;
+    text-transform: capitalize !important;
+}
+
+.modal {
+    width: 25% !important;
+}
+
+.data-label {
+    font-family: lato;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 0px;
+}
+
+.item-data {
+    font-family: lato;
+    text-align: left;
+}
+
+.item-number {
+    font-family: lato;
+    text-align: center;
+}
+
+.card-content {
+    overflow: visible !important;
+}
+
+.item_card {
+    min-height: 500px !important;
+}
+
+.item-data {
+    font-family: lato;
+    font-size: 1em;
+}
+
+.item-description {
+    min-height: 70px !important;
+}
+
+
+/*Styles for small screens*/
+
+@media(max-width:768px) {
+    .modal {
+        padding: 0px !important;
+        margin: 0px !important;
+        width: 100% !important;
+    }
 }
