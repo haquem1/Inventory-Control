@@ -1,21 +1,26 @@
 $(document).ready(function () {
 	add_button();
+	$("#add_it").click(function () {
+		item_to_db();
+	});
 });
 
 function add_button() {
 	$(".item_addition").click(function () {
 		// INITIALIZING MODAL ELEMENTS FOR ITEM ADDITION
 		$('#addition_modal').openModal({
-			dismissible: false,
+			dismissible: true,
+			ready: function () {
+				// clear every field when modal is ready
+				$("#item-name").val("");
+				//$("#item-description").val("");
+				$("#item-quantity").val("");
+			},
+			complete: function () {}
 		});
 		$('select').material_select();
 		$('textarea#item-description').characterCounter();
-		$("#add_it").click(function () {
-			item_to_db();
-		});
 		// END OF INITIALIZATION OF FORM ELEMENTS
-
-
 
 		$(this).addClass("animated bounce");
 		setTimeout(function () {
@@ -42,7 +47,7 @@ function item_to_db() {
 			// you will get response from your php page (what you echo or print)                 
 			$('#addition_modal').closeModal();
 			Materialize.toast(response, 4000);
-			$("#inventory_area").load("scripts/show_inventory.php");
+			$("#inventory_area").empty().load("scripts/show_inventory.php");
 		},
 		error: function (jqXHR, textStatus, errorThrown) {
 			console.log(textStatus, errorThrown);

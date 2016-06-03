@@ -8,8 +8,6 @@
 
 <body>
 	<link rel="stylesheet" href="../sass/inventory.css">
-	<script src="scripts/inventory_addition.js"></script>
-	<script src="scripts/edit_inventory.js"></script>
 
 	<div class="container-fluid">
 		<!--||||||||||||||||||||||||||||||||||-->
@@ -78,7 +76,7 @@
 		<!--|||DEMONSTRATION FOR ITEMS IN THE INVENTORY-->
 		<!--||||||||||||||||||||||||||||||||||-->
 		<div class="row">
-			<div id="inventory_area">
+			<div id="inventory_area" class="inventory_area">
 				<script>
 					$("#inventory_area").load("scripts/show_inventory.php");
 				</script>
@@ -88,9 +86,7 @@
 
 
 
-
-
-
+		<script src="scripts/inventory_addition.js"></script>
 	</div>
 
 </body>
