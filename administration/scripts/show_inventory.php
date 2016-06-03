@@ -1,7 +1,7 @@
 <?php
 
     //database information
-    include("../scripts/db_connect.php");
+    include("../../scripts/db_connect.php");
     //Check the connection
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
@@ -13,6 +13,7 @@
     $result = $connection->query($statement);
     $number_rows = $result->num_rows;
     if($number_rows != 0){
+		send_out_scripts();
         while($row = $result->fetch_assoc()){
             $id           = $row["identification"];
             $image        = $row["image_name"];
@@ -31,6 +32,16 @@
         create_dropdown_category("Oops, something went wrong");
     }
     $connection->close();
+	
+
+	function send_out_scripts(){
+		echo 
+		'
+			<script src="scripts/inventory_addition.js"></script>
+			<script src="scripts/edit_inventory.js"></script>
+		';
+		
+	}
 
     function create_item_card($id, $image, $date_added, $name, $category, $description, $quantity, $available, $lost, $broken){
         echo '
