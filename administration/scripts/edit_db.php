@@ -17,7 +17,7 @@
 
 	$table = "inventory";
     //$statement = "UPDATE $table SET $category='$value' WHERE identification='$row'";
-	$statement = 'UPDATE $table SET `name`="$name",`category`="$category",`description`="$description",`quantity`="$quantity",`available`="$available",`lost`="$lost",`broken`="$broken" WHERE identification="$row"';
+	$statement = "UPDATE $table SET name='$name',category='$category',description='$description',quantity='$quantity',available='$available',lost='$lost',broken='$broken' WHERE identification='$row'";
 
     if($connection->query($statement) === true){
         echo 'Update was successful';
