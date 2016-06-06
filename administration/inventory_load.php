@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <link rel="stylesheet" href="../sass/inventory.css">
+    <link rel="stylesheet" href="../sass/admin_inventory.css">
 
     <div class="container-fluid">
         <!--||||||||||||||||||||||||||||||||||-->
