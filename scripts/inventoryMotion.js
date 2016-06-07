@@ -66,28 +66,25 @@ function animate_button(item) {
 }
 
 function create_item_list(selected) {
-	var item = $(selected).children(":first").children(":first").attr("id");
-	// alert(item);
-	ajax_call(item);
+	var category = $(selected).children(":first").children(":first").attr("id");
+	$("#"+category+"_inventory").fadeIn(500);
 }
 
 function destroy_item_list(selected) {
 	var category = $(selected).children(":first").children(":first").attr("id");
-	$("#"+category+"_inventory").fadeOut(800,function(){
-		$(this).remove();
-	});
+	$("#"+category+"_inventory").fadeOut(800);
 }
 
-function ajax_call(category){
-	$.ajax({
-	  url: "../scripts/getCategoryInventory.php",
-	  type: "POST",
-	  data: {'CATEGORY': category},
-	  success: function(response){
-	  	$("#items_area").append(response).hide().fadeIn(1000);
-	  },
-	  error: function (jqXHR, textStatus, errorThrown){
- 		alert(errorThrown);
-      }
-	});
-}
+// function ajax_call(category){
+// 	$.ajax({
+// 	  url: "../scripts/get_category_inventory.php",
+// 	  type: "POST",
+// 	  data: {'CATEGORY': category},
+// 	  success: function(response){
+// 	  	$("#items_area").append(response).hide().fadeIn(1000);
+// 	  },
+// 	  error: function (jqXHR, textStatus, errorThrown){
+//  		alert(errorThrown);
+//       }
+// 	});
+// }

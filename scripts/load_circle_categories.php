@@ -57,6 +57,7 @@
 			while($category_item = $category_list->fetch_assoc()){
 				create_side_category_bubble($category_item['category']);
 			}
+			create_side_category_bubble('checkout');
 			echo '</div>';
 		}else{
 			//no categories were found, pretty bad!
@@ -70,7 +71,7 @@
 				<div class="'.$side.'">
 					<div id="" class="category-bubble '.$category.'-container">
 						<a class="'.$category.'-link btn-custom btn-floating waves-effect waves-light">
-							<img class="'.$category.'-img" id="'.$category.'" src="../images/'.$category.'.svg" alt="'.$category.'">
+							<img class="'.$category.'-img category-img" id="'.$category.'" src="../images/'.$category.'.svg" alt="'.$category.'">
 						</a>
 						<br>
 						<label class="item-label">'.$category.'</label>	
@@ -84,11 +85,11 @@
 		echo '
 			<div class="col s1">
 				<div id="" class="category-bubble '.$category.'-container">
-					<a class="'.$category.'-link btn-custom btn-floating waves-effect waves-light">
-						<img class="'.$category.'-img" id="'.$category.'" src="../images/'.$category.'.svg" alt="'.$category.'">
+					<a class="'.$category.'-link btn-custom-side btn-floating waves-effect waves-light">
+						<img class="'.$category.'-img category-img-side" id="'.$category.'" src="../images/'.$category.'.svg" alt="'.$category.'">
 					</a>
 					<br>
-					<label class="item-label">'.$category.'</label>	
+					<label class="item-label-side">'.$category.'</label>	
 				</div>
 			</div>
 		';
