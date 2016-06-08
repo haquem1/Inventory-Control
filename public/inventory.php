@@ -113,16 +113,26 @@ if($_SESSION['USER'] == ""){
 			<h4>Item Checkout</h4>
 			<p>State the amount of items that you will take</p>
 			<div class="row" id="final_item_cart">
-			<!-- Data will be inserted through javascript -->
+				<!-- Data will be inserted through javascript -->
 			</div>
 		</div>
 		<div class="modal-footer">
 			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
-			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+			<a href="#!" class="take_items waves-effect waves-green btn-flat ">Agree</a>
 		</div>
 	</div>
 
 
+	<!-- Modal Structure -->
+	<div id="success_modal" class="modal">
+		<div class="modal-content">
+			<h4>Your request was successful</h4>
+			<p>Take care of the equipment. <small class="red">We know who you are!</small></p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="logout modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+		</div>
+	</div>
 
 
 	

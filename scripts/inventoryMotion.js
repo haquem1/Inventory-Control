@@ -1,3 +1,4 @@
+// Item_cart is just an array to store the values of arrays.
 var item_cart = [];
 
 function randomize_background() {
@@ -28,6 +29,14 @@ function button_selection() {
 		$("#checkout_modal").openModal();
 		var listing = display_cart();
 		$("#final_item_cart").empty().append(listing);
+	});
+
+	$(".take_items").click(function(){
+		check_out();
+	});
+
+	$(".logout").click(function(){
+		logout();
 	});
 
 }
@@ -84,21 +93,6 @@ function destroy_item_list(selected) {
 	$("#"+category+"_inventory").fadeOut(800);
 }
 
-// function ajax_call(category){
-// 	$.ajax({
-// 	  url: "../scripts/get_category_inventory.php",
-// 	  type: "POST",
-// 	  data: {'CATEGORY': category},
-// 	  success: function(response){
-// 	  	$("#items_area").append(response).hide().fadeIn(1000);
-// 	  },
-// 	  error: function (jqXHR, textStatus, errorThrown){
-//  		alert(errorThrown);
-//       }
-// 	});
-// }
-
-
 
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // CARD SELECTION ANIMATION
@@ -142,7 +136,8 @@ function select_card(card){
 function push_item_to_cart(card){
 	//recording of item-id is necessary, additional data is obtained from database
 	var row = $(card).attr('class').split(" ")[0].split("-")[0];
-	item_cart.push(row);
+	var item = [row, "1"];
+	item_cart.push(item);
 	$(".checkout_items").empty().append(item_cart.length);
 	// display_cart();
 }
@@ -150,31 +145,65 @@ function push_item_to_cart(card){
 function display_cart(){
 	var listing = "";
 	for(var i = 0; i < item_cart.length; i++){
-		var item_id = "."+item_cart[i]+"-item";
+		var item_id = "."+ item_cart[i][0] +"-item";
 		var name = $(item_id).find(".card-title").html();
 		var available = $(item_id).find(".item_available").html().split(" ")[0];
-		listing += create_cart_item(name, available);
+		listing += create_cart_item(i, name, available);
 	}
 	return listing;
 }
 
-function create_cart_item(name, available){
+function create_cart_item(id, name, available){
 	var list_item = `
-		<div class="col s12 m3 center-align">
-	      <div class="card cart-card small"><div class="card-content">
-	          <p class="card-title">`+name+`</p>
-	          <div class="input-field col s4 push-s4">
-		        <label class="active" for="amount">`+available+` Max</label>
-		        <input value="1" id="amount" name="AMOUNT" type="number" class="validate" required>
-		      </div>		
-	        </div></div>
-	    </div>
+	<div class="col s12 m3 center-align">
+	<div class="card cart-card small"><div class="card-content">
+	<p class="card-title">`+name+`</p>
+	<div class="input-field col s4 push-s4">
+	<label class="active" for="amount">`+available+` Max</label>
+	<input max="`+available+`" value="1" id="`+id+`-amount" name="AMOUNT" type="number" class="validate" required>
+	</div>		
+	</div></div>
+	</div>
 	`;
 	return list_item;
 }
 
 function check_out(){
-	//Ajax call to push items to database
+	get_borrowed_item_amount();
+	var cart_data = JSON.stringify(item_cart);
+	alert(cart_data);
+	$.ajax({
+		url: "../scripts/add_borrower_to_db.php",
+		type: "POST",
+		data: { 'SERIALIZED-ITEMS': cart_data},
+		success: function(response){
+			$("#checkout_modal").closeModal();
+			$("#success_modal").openModal();
+		},
+		error: function (jqXHR, textStatus, errorThrown){
+			alert(errorThrown);
+		}
+	});
+}
+
+function get_borrowed_item_amount(){
+	for(var i = 0; i < item_cart.length; i++){
+		var amount = $("#"+i+"-amount").val();
+		item_cart[i][1] = amount;
+	}
+}
+
+function logout(){
+	$.ajax({
+		url: "../scripts/logout.php",
+		success: function(response){
+			$("#success_modal").closeModal();
+			window.location.replace("user_login.php");
+		},
+		error: function (jqXHR, textStatus, errorThrown){
+			alert(errorThrown);
+		}
+	});	
 }
 
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -192,10 +221,15 @@ function deselect_card(card){
 function pop_item_to_cart(card){
 	//recording of item-id is necessary, additional data is obtained from database
 	var row = $(card).attr('class').split(" ")[0].split("-")[0];
-	var position = item_cart.indexOf(row);
+	var item = [row, "1"];
+	position = -1;
+	for(var i = 0; i < item_cart.length; i++){
+		if(item_cart[i][0] == item[0]){
+			position = i;
+		}
+	}
 	if(position != -1){
 		item_cart.splice(position, 1);
+		$(".checkout_items").empty().append(item_cart.length);
 	}
-	$(".checkout_items").empty().append(item_cart.length);
-	// display_cart();
 }
