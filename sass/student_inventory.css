@@ -12,6 +12,7 @@
 }
 
 .btn-custom-side {
+	position:relative;
 	height: 80px !important;
 	width: 80px !important;
 	margin-top: 10px;
@@ -172,6 +173,23 @@ body {
 	overflow:hidden;
 }
 
+.item_amount{
+	position:absolute;
+}
+
+.checkout_items{
+	top:-15px;
+	right:30px;
+	color:white;
+	font-family:lato;
+	font-size:2.2em;
+	text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+.checkout-img{
+	opacity:0 !important;
+}
+
 .card-title
 {
 	/*color:rgba(0,0,0,.75);*/
@@ -189,4 +207,9 @@ body {
 
 .item_data{
 	margin:5px 20px 0px 20px !important;
+}
+
+.cart-card
+{
+	max-height:50px !important;
 }

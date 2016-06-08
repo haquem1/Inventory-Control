@@ -87,6 +87,7 @@
 				<div id="" class="category-bubble '.$category.'-container">
 					<a class="'.$category.'-link btn-custom-side btn-floating waves-effect waves-light">
 						<img class="'.$category.'-img category-img-side" id="'.$category.'" src="../images/'.$category.'.svg" alt="'.$category.'">
+						<p class="'.$category.'_items item_amount"></p>
 					</a>
 					<br>
 					<label class="item-label-side">'.$category.'</label>	

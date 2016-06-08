@@ -50,7 +50,7 @@ $connection->close();
 function create_inventory_item($id, $item_image, $item_name, $item_description, $item_available){
 	echo '
 	<div class="col s12 m3">
-		<div id="" class="'.$id.'-item card small hoverable">
+		<div id="unselected" class="'.$id.'-item card small hoverable">
 			<div class="card-image-container waves-effect waves-block waves-light">
 				<img class="card-image" src="../images/inventory/'.$item_image.'">
 			</div>

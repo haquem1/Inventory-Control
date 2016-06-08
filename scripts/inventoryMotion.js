@@ -1,3 +1,5 @@
+var item_cart = [];
+
 function randomize_background() {
 	var num = getRandomInt(1, 5);
 	var image = "nature" + num + ".jpg";
@@ -21,6 +23,13 @@ function button_selection() {
 			create_item_list($(this));
 		}
 	});
+
+	$(".checkout-container").click(function(){
+		$("#checkout_modal").openModal();
+		var listing = display_cart();
+		$("#final_item_cart").empty().append(listing);
+	});
+
 }
 
 
@@ -88,3 +97,105 @@ function destroy_item_list(selected) {
 //       }
 // 	});
 // }
+
+
+
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// CARD SELECTION ANIMATION
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||
+function activate_card(){
+	$('.card').click(function(){
+		var card = $(this);
+		var selected = $(card).attr("id");
+		if(selected == "unselected"){
+			select_card(card);			
+		}else{
+			deselect_card(card);
+		}
+		animate_card(card);
+	});
+}
+
+function animate_card(card){
+	setTimeout(function() {
+		$(card).removeClass("animated bounce");
+	}, 1000);
+	$(card).addClass("animated bounce");
+}
+
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// CARD SELECTION LOGIC
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+function select_card(card){
+	$(card).attr("id", "selected");
+	// $(card).animate({background:"url('../images/success.svg')"});
+	$(card).css("background-image","url('../images/success.svg')");
+	$(card).css("background-size", "cover");
+	$(card).css("background-position","center");
+	$(card).css("background-color", "#25AE88");
+	$(card).find(".card-image-container").css("opacity", ".5");
+	$(card).find(".card-content").css("opacity", ".5");
+	push_item_to_cart(card);
+}
+
+function push_item_to_cart(card){
+	//recording of item-id is necessary, additional data is obtained from database
+	var row = $(card).attr('class').split(" ")[0].split("-")[0];
+	item_cart.push(row);
+	$(".checkout_items").empty().append(item_cart.length);
+	// display_cart();
+}
+
+function display_cart(){
+	var listing = "";
+	for(var i = 0; i < item_cart.length; i++){
+		var item_id = "."+item_cart[i]+"-item";
+		var name = $(item_id).find(".card-title").html();
+		var available = $(item_id).find(".item_available").html().split(" ")[0];
+		listing += create_cart_item(name, available);
+	}
+	return listing;
+}
+
+function create_cart_item(name, available){
+	var list_item = `
+		<div class="col s12 m3 center-align">
+	      <div class="card cart-card small"><div class="card-content">
+	          <p class="card-title">`+name+`</p>
+	          <div class="input-field col s4 push-s4">
+		        <label class="active" for="amount">`+available+` Max</label>
+		        <input value="1" id="amount" name="AMOUNT" type="number" class="validate" required>
+		      </div>		
+	        </div></div>
+	    </div>
+	`;
+	return list_item;
+}
+
+function check_out(){
+	//Ajax call to push items to database
+}
+
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// CARD UNSELECTION LOGIC
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||
+function deselect_card(card){
+	$(card).attr("id", "unselected");
+	$(card).css("background-image","");
+	$(card).css("background-color", "");
+	$(card).find(".card-image-container").css("opacity", "1");
+	$(card).find(".card-content").css("opacity", "1");
+	pop_item_to_cart(card);
+}
+
+function pop_item_to_cart(card){
+	//recording of item-id is necessary, additional data is obtained from database
+	var row = $(card).attr('class').split(" ")[0].split("-")[0];
+	var position = item_cart.indexOf(row);
+	if(position != -1){
+		item_cart.splice(position, 1);
+	}
+	$(".checkout_items").empty().append(item_cart.length);
+	// display_cart();
+}
