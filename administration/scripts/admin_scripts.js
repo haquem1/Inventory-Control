@@ -10,7 +10,17 @@ function admin_operations() {
 	});
 
 	$(".current").click(function () {
-		$("#application_area").load("current_load.php");
+		$.ajax({
+			url: "./current_load.php",
+			success: function(response){
+				$("#application_area").empty().append(response).hide().fadeIn(1000);
+				$('.collapsible').collapsible();
+			},
+			error: function (jqXHR, textStatus, errorThrown){
+				alert(errorThrown);
+			}
+		});
+		// $("#application_area").load("current_load.php");
 		return false;
 	});
 
