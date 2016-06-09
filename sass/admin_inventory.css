@@ -1,0 +1,138 @@
+.item_addition {
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    z-index: 1;
+}
+
+.item-image {
+    height: 150px;
+    margin: 10px 0px 10px 0px;
+}
+
+.modal-header {
+    font-family: lato;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    margin: 0px !important;
+}
+
+.addition-label {
+    text-transform: capitalize !important;
+}
+
+.modal {
+    width: 25% !important;
+}
+
+.data-label {
+    font-family: lato;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 0px;
+}
+
+.item-data {
+    font-family: lato;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.item-number {
+    font-family: lato;
+    text-align: center;
+}
+
+.card-content {
+    overflow: visible !important;
+}
+
+.item_card {
+    min-height: 500px !important;
+}
+
+.item-data {
+    font-family: lato;
+    font-size: 1em;
+}
+
+.item-description {
+    min-height: 70px !important;
+}
+
+.category-heading {
+    font-family: lato;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.card-title {
+    width: 100% !important;
+    font-size: 1.5em !important;
+    overflow: hidden !important;
+}
+
+.card-action-item {
+    height: 35px !important;
+}
+
+.btn-holder {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin: 10px 10px 0px 0px;
+    opacity: 0;
+}
+
+#delete-btn,
+#update-btn {
+    border: 2px solid black;
+}
+
+
+/*Styles for small screens*/
+
+@media(max-width:768px) {
+    .modal {
+        padding: 0px !important;
+        margin: 0px !important;
+        width: 100% !important;
+    }
+}
+
+.inventory_area {
+    position: relative;
+}
+
+
+.deletion-message {
+    font-family:lato;
+    font-size:1em;
+}
+
+.deletion-warning {
+    font-family: lato !important;
+    font-size: 1.2em !important;
+    text-transform:uppercase !important;
+    color:red;
+}
+
+.borrower-info{
+    font-family:lato;
+    font-size:1em;
+    margin:0px !important;
+    padding:0px !important;
+}
+
+.current-header{
+   font-family:lato;
+   font-weight:bold;
+   margin-bottom:-10px !important;
+}
