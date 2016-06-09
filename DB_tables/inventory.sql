@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 03, 2016 at 10:02 PM
+-- Generation Time: Jun 09, 2016 at 07:46 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -45,8 +45,8 @@ CREATE TABLE `inventory` (
 
 INSERT INTO `inventory` (`identification`, `date_added`, `name`, `category`, `description`, `image_name`, `quantity`, `available`, `lost`, `broken`) VALUES
 (1, '2016-06-03 09:59:57', 'Zoom H5 Recorder', 'audio', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
-(2, '2016-06-03 10:00:22', 'DR-100 Tascam Recorder', 'audio', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
-(3, '2016-06-03 10:01:07', 'Tascam RC-DR100 Remote', 'audio', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
+(2, '2016-06-03 10:00:22', 'DR-100 Tascam Recorder', 'Cables', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
+(3, '2016-06-03 10:01:07', 'Tascam RC-DR100 Remote', 'Audio', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
 (4, '2016-06-03 10:01:23', 'Audio-Technica AT897 Microphone', 'audio', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
 (5, '2016-06-03 10:06:29', 'Rycote Windshield', 'audio', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
 (6, '2016-06-03 10:09:39', 'Neewer NW-880 Camera Timer Remote', 'audio', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
@@ -57,7 +57,7 @@ INSERT INTO `inventory` (`identification`, `date_added`, `name`, `category`, `de
 (11, '2016-06-03 10:33:32', 'Microphone Foam â€“ Black Small', 'audio', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
 (12, '2016-06-03 10:46:50', 'Canon 6D Camera', 'cameras', 'Description will be available soon!', 'default.svg', 2, 2, 0, 0),
 (13, '2016-06-03 10:47:15', 'Canon Rebel t2i Camera', 'cameras', 'Description will be available soon!', 'default.svg', 2, 2, 0, 0),
-(14, '2016-06-03 10:47:36', 'GoPro Hero 4', 'cameras', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
+(14, '2016-06-03 10:47:36', 'GoPro Hero 4', 'Cameras', 'Description will be available soon!', 'default.svg', 1, 1, 0, 0),
 (15, '2016-06-03 10:47:57', 'Logitech QuickCam Pro 9000', 'cameras', 'Description will be available soon\n', 'default.svg', 1, 1, 0, 0),
 (16, '2016-06-03 10:48:23', '77mm UV Protector', 'lenses', 'Description will be available soon!', 'default.svg', 3, 3, 0, 0),
 (17, '2016-06-03 10:49:10', '67mm Neutral Density 0.6 Filter', 'lenses', 'Description will be available soon!', 'default.svg', 2, 2, 0, 0),
